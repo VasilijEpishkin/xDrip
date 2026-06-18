@@ -1,57 +1,81 @@
-# Nightscout xDrip+
-> Enhanced personal research version of xDrip
+# xDrip+ — Personal Fork
 
- <img align="right" src="Documentation/images/download-xdrip-plus-qr-code.png">
- Info page and APK download: https://jamorham.github.io/#xdrip-plus
+Personal fork of [xDrip+](https://github.com/NightscoutFoundation/xDrip) (by NightscoutFoundation), customized for use with the **Ottai CGM sensor** and redesigned with **Material Design 3**.
 
-<img align="right" src="https://travis-ci.org/jamorham/xDrip-plus.svg?branch=master"><a align="right" title="Crowdin" target="_blank" href="https://crowdin.com/project/xdrip"><img align="right" src="https://badges.crowdin.net/xdrip/localized.svg"></a>
+---
 
-## Features
-* Voice, Keypad or Watch input of Treatments (Insulin/Carbs/Notes)
-* Visualization of Insulin and Carb action curves + Undo/Redo
-* Improved alerts and predictive low forecasting feature
-* Instant data synchronization between phones and tablets
-* Support for many different data sources
-* Published by the Nightscout Foundation
+## What's different from upstream
 
- <img align="middle" src="https://jamorham.github.io/images/jamorham-natural-language-treatments-two-web.png">
+### ✅ Ottai CGM Integration
+Full support for the Ottai CGM sensor as a passive data source:
+- `OttaiAppReceiver` — receives glucose broadcasts from the Ottai companion app
+- `OttaiCollectionService` — Kotlin-based collection service
+- Noise suppression: `faux_bgr.put("noise", 1)` prevents `???` annotation
+- Registered as a passive receiver — no BLE scanning needed
+- Ottai icon added to the sensor list
 
-## What does it do?
+### ✅ Nightscout Cloud Upload
+Configured and tested with a Railway-hosted Nightscout instance:
+- URL format: `https://<token>@<host>/api/v1/` (trailing `/api/v1/` required)
+- Profile: DIA=4h, I:C=10g/U, ISF=2 mmol/L/U, Target=4.0–8.0 mmol/L
 
-xDrip+ is an unofficial and independent Android app which works as data hub and processor between many different devices.
+### 🎨 UI Redesign — Material Design 3
+Full dark theme redesign using the M3 palette. All screens use a custom Toolbar with a navigation drawer that overlays from the top of the screen.
 
-It supports wireless connections to G6, G7, Medtrum A6, Libre via NFC and Bluetooth, 630G, 640G, 670G pumps, CareSens Air and Eversense CGM via companion apps. Bluetooth Glucose Meters such as the Contour Next One, AccuChek Guide, Verio Flex & Diamond Mini as well as devices like the Pendiq 2.0 Insulin Pen.
+**M3 Color Palette:**
+| Token | Hex | Role |
+|---|---|---|
+| `md_background` | `#0F1117` | Screen background |
+| `md_surface` | `#1A1E26` | Cards, drawer |
+| `md_primary` | `#4DD9AC` | Teal accent, active elements |
+| `md_on_surface` | `#E2E6EF` | Primary text |
+| `md_on_surface_variant` | `#9CA8B8` | Secondary text, icons |
+| `md_error_container` | `#93000A` | Destructive button background |
 
-Heart-rate and step counter data is processed from Android Wear, Garmin, Fitbit and Pebble smart-watches and watch-faces for those that show glucose values and graphs.
+**Screens redesigned:**
+- Navigation Drawer — M3 rows with icons, overlay from screen top
+- Home (`activity_home.xml`) — chart background matches theme
+- Initial Calibration (`activity_double_calibration.xml`)
+- Stop Sensor (`activity_stop_sensor.xml`)
+- Start Sensor (`activity_start_new_sensor.xml`)
+- Bluetooth Scan (`activity_bluetooth_scan.xml`)
+- System Status (`activity_mega_status.xml` + `activity_system_status.xml`)
+- Alert Level (`activity_edit_alert.xml`)
+- Snooze Alerts (`activity_snooze.xml`)
+- Statistics (`activity_statistics.xml` + `stats_general.xml`)
 
-On some Android Wear watches, it is possible for the G6 to talk directly to the watch so it can display values even when out of range of the phone.
+**Shared infrastructure:**
+- `themes.xml` + `colors.xml` — M3 dark theme, full palette
+- `ActivityWithMenu` — auto-sets custom Toolbar as SupportActionBar
+- `NavigationDrawerFragment` — 5-arg `ActionBarDrawerToggle` + `topMargin=0` fix for full-screen drawer overlay
+- `NavDrawerAdapter` + 17 vector icons for all drawer items
 
-The app contains sophisticated charting, customization and data entry features as well as a predictive simulation model.
+---
 
-Instant two-way synchronization is possible by linking follower handsets, data can also be uploaded and downloaded to a Nightscout web service or uploaded directly to Tidepool, MongoDB or InfluxDB.
+## Screens remaining (planned)
 
-Customization allows for different options to configure alarms, vocalize readings, change the display preferences etc. International users can update translations from within the app too.
+- [ ] Search Notes
+- [ ] History (`BGHistory`)
+- [ ] Settings (PreferenceFragment hierarchy)
 
-Your data is yours and can be exported in many different ways. xDrip also intercommunicates with other apps, for example sending and receiving live data with AndroidAPS.
+---
 
+## Build
 
-## Ethos
-* Developed using Rapid Prototyping methodology
-* Immediate results favoured to prove concepts
-* Designed to support my personal research goals
-* User Choice always a high priority
-* No registration or Internet access required
-* Community testing and collaboration appreciated!
+```bash
+# Build
+./gradlew :app:assembleFast
 
-## Roadmap
-* Calibration improvements
-* Supporting the large family of devices
-* Increasing automation and data backup and sync options
-* More Nightscout and APS integration
+# Install
+adb install -r app/build/outputs/apk/fast/debug/app-fast-debug.apk
+```
 
-## Collaboration
-We are very happy if people want to collaborate with this project. Please contact us at [Discussions](https://github.com/NightscoutFoundation/xDrip/discussions) if you want to get involved and study the [collaboration guidelines](CONTRIBUTING.md) before submitting any patches or pull requests.
+**Flavor:** `fast` — `resConfigs "en", "ru", "xxhdpi"`  
+**Target device:** Android, USB ADB  
+**Package:** `com.eveningoutpost.dexdrip`
 
-## Thanks
-None of this would be possible without all the hard work of the xDrip and Nightscout communities who have developed such excellent software and allowed us to build upon it.
+---
 
+## Based on
+
+[NightscoutFoundation/xDrip](https://github.com/NightscoutFoundation/xDrip) — the upstream project. All original functionality is preserved; this fork adds Ottai support and visual improvements only.
