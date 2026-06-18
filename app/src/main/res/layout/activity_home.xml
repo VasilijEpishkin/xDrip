@@ -41,7 +41,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#212121"
+            android:background="@color/md_background"
             android:orientation="vertical"
             android:padding="0dp">
 
@@ -193,15 +193,16 @@
                     android:layout_alignEnd="@+id/layoutCurrentBgValueRealTime"
                     android:layout_marginTop="1dp"
                     android:layout_marginRight="6dp"
-                    android:background="@android:color/transparent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="@string/speaktreatment"
                     android:gravity="right"
                     android:nestedScrollingEnabled="false"
-                    android:paddingLeft="2dp"
-                    android:paddingTop="2dp"
-                    android:paddingRight="4dp"
-                    android:paddingBottom="1dp"
-                    android:src="@drawable/ic_eyedropper_variant_grey600_24dp" />
+                    android:paddingLeft="6dp"
+                    android:paddingTop="6dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="5dp"
+                    android:src="@drawable/ic_eyedropper_variant_grey600_24dp"
+                    android:tint="@color/md_on_surface_variant" />
 
                 <ImageButton
                     android:id="@+id/btnNote"
@@ -211,15 +212,16 @@
                     android:layout_below="@+id/btnTreatment"
                     android:layout_marginRight="0dp"
                     android:layout_marginTop="4dp"
-                    android:background="@android:color/transparent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="Add note"
                     android:gravity="right"
                     android:onClick="showNoteTextInputDialog"
-                    android:paddingBottom="2dp"
-                    android:paddingLeft="2dp"
-                    android:paddingRight="6dp"
-                    android:paddingTop="2dp"
-                    android:src="@drawable/ic_note_plus_grey600_24dp" />
+                    android:paddingBottom="6dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="6dp"
+                    android:src="@drawable/ic_note_plus_grey600_24dp"
+                    android:tint="@color/md_on_surface_variant" />
 
 
                 <ImageButton
@@ -591,11 +593,10 @@
 
                 <Button
                     android:id="@+id/hourbutton24"
+                    style="@style/TimeRangeButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:longClickable="true"
-                    android:textSize="14sp"
-                    android:minWidth="0dp"
                     android:onClick="timeButtonClick"
                     android:onLongClick="@{home::timeButtonLongClick}"
                     android:text="@{@string/hour_format(24)}"
@@ -603,23 +604,21 @@
 
                 <Button
                     android:id="@+id/hourbutton12"
+                    style="@style/TimeRangeButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:longClickable="true"
-                    android:textSize="14sp"
                     android:onClick="timeButtonClick"
-                    android:minWidth="0dp"
                     android:onLongClick="@{home::timeButtonLongClick}"
                     android:text="@{@string/hour_format(12)}"
                     app:button_indicate="@{home.isHourLocked(12, ui.ping)}" />
 
                 <Button
                     android:id="@+id/hourbutton6"
+                    style="@style/TimeRangeButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:longClickable="true"
-                    android:textSize="14sp"
-                    android:minWidth="0dp"
                     android:onClick="timeButtonClick"
                     android:onLongClick="@{home::timeButtonLongClick}"
                     android:text="@{@string/hour_format(6)}"
@@ -627,11 +626,10 @@
 
                 <Button
                     android:id="@+id/hourbutton3"
+                    style="@style/TimeRangeButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:longClickable="true"
-                    android:textSize="14sp"
-                    android:minWidth="0dp"
                     android:onClick="timeButtonClick"
                     android:onLongClick="@{home::timeButtonLongClick}"
                     android:text="@{@string/hour_format(3)}"

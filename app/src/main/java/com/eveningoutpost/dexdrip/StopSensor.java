@@ -25,7 +25,6 @@ import com.eveningoutpost.dexdrip.utilitymodels.Pref;
 import com.eveningoutpost.dexdrip.utils.ActivityWithMenu;
 import com.eveningoutpost.dexdrip.utils.DexCollectionType;
 
-import lombok.val;
 
 import static com.eveningoutpost.dexdrip.g5model.Ob1G5StateMachine.shortTxId;
 import static com.eveningoutpost.dexdrip.services.Ob1G5CollectionService.getTransmitterID;
@@ -43,7 +42,7 @@ public class StopSensor extends ActivityWithMenu {
         } else {
             JoH.fixActionBar(this);
 
-            val binding = ActivityStopSensorBinding.inflate(getLayoutInflater());
+            final var binding = ActivityStopSensorBinding.inflate(getLayoutInflater());
             binding.setModel(new ViewModel());
             setContentView(binding.getRoot());
         }
@@ -103,6 +102,10 @@ public class StopSensor extends ActivityWithMenu {
             return DexCollectionType.getDexCollectionType() != DexCollectionType.DexcomG5
                     || !Pref.getBooleanDefaultFalse("using_g6")
                     || !FirmwareCapability.isTransmitterRawIncapable(getTransmitterID());
+        }
+
+        public void goBack() {
+            finish();
         }
 
         public void stopSensorClick() {

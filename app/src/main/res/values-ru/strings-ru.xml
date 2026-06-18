@@ -16,7 +16,7 @@
     <string name="title_activity_calculated_data_table">Таблица расчетных данных</string>
     <string name="title_activity_start_new_sensor">Запуск нового сенсора</string>
     <string name="title_activity_new_sensor_location">Расположение нового сенсора</string>
-    <string name="title_activity_stop_sensor">Остановить датчик</string>
+    <string name="title_activity_stop_sensor">Остановить сенсор</string>
     <string name="title_activity_nav_drawer">Панель навигации</string>
     <string name="navigation_drawer_open">Открыть панель навигации</string>
     <string name="navigation_drawer_close">Закрыть панель навигации</string>
@@ -880,7 +880,7 @@
     <string name="install_text_to_speech_data_question">Установить требуемые данные для синтеза речи?</string>
     <string name="after_installation_of_languages_you_might_have_to">(После установки дополнительных языков может потребоваться нажать \'Перезапустить службу сбора данных\' в меню \'Состояние системы\')</string>
     <string name="stop_sensor">Остановить сенсор</string>
-    <string name="dont_stop_just_reset_all_calibrations">Не останавливать, просто сбросить все калибровки</string>
+    <string name="dont_stop_just_reset_all_calibrations">Сбросить калибровки</string>
     <string name="initial_calibration">Начальная калибровка</string>
     <string name="calibration_can_not_be_blank">Калибровка не может быть пустой</string>
     <string name="invalid_calibration_number">Неверное значение калибровки!</string>
@@ -892,8 +892,8 @@
     <string name="bluetooth_scan">Искать устройства Bluetooth</string>
     <string name="level_alerts">Уведомления об уровнях</string>
     <string name="override_calibration">Изменить калибровку</string>
-    <string name="only_stop_your_sensor_when_you_actually_plan">Останавливайте сенсор только когда планируется его замена, в иных случаях он должен продолжать работать!</string>
-    <string name="restart_collector">Перезапустить службу\n\nсбора данных</string>
+    <string name="only_stop_your_sensor_when_you_actually_plan">Останавливайте сенсор только при его замене. Если нужно только сбросить данные калибровки без замены — используйте кнопку «Сбросить калибровки».</string>
+    <string name="restart_collector">Перезапустить службу сбора данных</string>
     <string name="forget_device">Забыть устройство</string>
     <string name="other_notes">Другие заметки:</string>
     <string name="delete_future_data">Удалить будущие данные</string>

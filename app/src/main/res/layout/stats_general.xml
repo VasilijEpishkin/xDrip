@@ -10,7 +10,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/md_background">
 
         <ScrollView
             android:id="@+id/scrollView5"
@@ -38,7 +39,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="@string/range_in_high_low"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
 
                     <TextView
                         android:id="@+id/textView_ranges_percent"
@@ -48,7 +50,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="--%/--%/--%"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -66,7 +69,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="0dp"
                         android:text="@string/stats_range_settings"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
 
                     <TextView
                         android:id="@+id/textView_stats_range_set"
@@ -76,7 +80,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text=": ---"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -94,7 +99,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="@string/absolute_s"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
 
                     <TextView
                         android:id="@+id/textView_ranges_absolute"
@@ -104,7 +110,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="--/--/--"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -123,7 +130,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="@string/median_bg"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
 
                     <TextView
                         android:id="@+id/textView_median"
@@ -133,7 +141,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="---"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -151,7 +160,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="@string/mean_bg"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
 
                     <TextView
                         android:id="@+id/textView_mean"
@@ -161,7 +171,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="---"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -180,7 +191,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="@string/hba1c_est"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
 
                     <TextView
                         android:id="@+id/textView_a1c"
@@ -190,7 +202,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="-- mmol/mol\n--%"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -209,7 +222,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="@string/stddev"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
 
                     <TextView
                         android:id="@+id/textView_stdev"
@@ -219,7 +233,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="---"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -238,7 +253,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="@string/relative_sd_cv"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
 
                     <TextView
                         android:id="@+id/textView_coefficient_of_variation"
@@ -248,7 +264,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="--%"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -267,7 +284,8 @@
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:text="--"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="@color/md_on_surface" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

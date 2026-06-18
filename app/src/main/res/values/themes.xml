@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Base application theme.
+        Parent: Theme.Material3.Dark — gives M3 components, typography, elevation,
+        ripple effects across the entire app without touching individual layouts.
+    -->
+    <style name="AppTheme" parent="Theme.Material3.Dark">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/md_primary</item>
+        <item name="colorOnPrimary">@color/md_on_primary</item>
+        <item name="colorPrimaryContainer">@color/md_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/md_on_primary_container</item>
+        <!-- Secondary -->
+        <item name="colorSecondary">@color/md_secondary</item>
+        <item name="colorOnSecondary">@color/md_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/md_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/md_on_secondary_container</item>
+        <!-- Tertiary -->
+        <item name="colorTertiary">@color/md_tertiary</item>
+        <item name="colorOnTertiary">@color/md_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/md_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/md_on_tertiary_container</item>
+        <!-- Error -->
+        <item name="colorError">@color/md_error</item>
+        <item name="colorOnError">@color/md_on_error</item>
+        <item name="colorErrorContainer">@color/md_error_container</item>
+        <item name="colorOnErrorContainer">@color/md_on_error_container</item>
+        <!-- Background & Surface -->
+        <item name="android:colorBackground">@color/md_background</item>
+        <item name="colorOnBackground">@color/md_on_background</item>
+        <item name="colorSurface">@color/md_surface</item>
+        <item name="colorOnSurface">@color/md_on_surface</item>
+        <item name="colorSurfaceVariant">@color/md_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/md_on_surface_variant</item>
+        <!-- Outline -->
+        <item name="colorOutline">@color/md_outline</item>
+        <item name="colorOutlineVariant">@color/md_outline_variant</item>
+        <!-- Window chrome -->
+        <item name="android:windowBackground">@color/md_background</item>
+        <item name="android:textColor">@color/md_on_background</item>
+        <item name="android:statusBarColor">@color/md_background</item>
+        <item name="android:navigationBarColor">@color/md_surface</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <!-- ActionBar: same background as content, no boundary with chart area -->
+        <item name="actionBarStyle">@style/AppActionBar</item>
+        <item name="actionBarTheme">@style/AppActionBar.Theme</item>
+        <!-- Shape system -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.App.Large</item>
+    </style>
+
+    <!-- Activities that supply their own Toolbar via setSupportActionBar() -->
+    <style name="AppThemeToolBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Alias kept for backward compat with manifest references -->
+    <style name="AppThemeToolBarLite" parent="AppThemeToolBar" />
+
+    <!-- Used by reference/preview screens -->
+    <style name="AppThemeReference" parent="AppTheme">
+        <item name="android:background">@color/md_surface</item>
+    </style>
+
+    <!-- ActionBar style: background matches md_background, no bottom divider -->
+    <style name="AppActionBar" parent="Widget.Material3.ActionBar.Solid">
+        <item name="background">@color/md_background</item>
+        <item name="elevation">0dp</item>
+        <item name="titleTextStyle">@style/AppActionBar.TitleText</item>
+        <item name="subtitleTextStyle">@style/AppActionBar.SubtitleText</item>
+    </style>
+    <style name="AppActionBar.Theme" parent="ThemeOverlay.Material3.ActionBar">
+        <item name="android:textColorPrimary">@color/md_on_surface</item>
+        <item name="android:textColorSecondary">@color/md_on_surface_variant</item>
+        <item name="colorControlNormal">@color/md_on_surface_variant</item>
+    </style>
+    <style name="AppActionBar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/md_on_surface</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="AppActionBar.SubtitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textColor">@color/md_on_surface_variant</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Shape appearance tokens -->
+    <style name="ShapeAppearance.App.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    <style name="ShapeAppearance.App.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+    <style name="ShapeAppearance.App.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+</resources>

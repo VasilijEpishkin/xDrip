@@ -84,7 +84,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import lombok.val;
 
 public class MegaStatus extends FloatingLocaleActivityWithScreenshot {
 
@@ -128,7 +127,7 @@ public class MegaStatus extends FloatingLocaleActivityWithScreenshot {
     private static final String MEDTRUM_STATUS = "Medtrum Status";
     private static final String IP_COLLECTOR = "IP Collector";
     private static final String XDRIP_PLUS_SYNC = "Followers";
-    private static final String UPLOADERS = "Uploaders";
+    private static final String UPLOADERS = "Синхронизация";
     private static final String LEFUN_STATUS = "Lefun";
     private static final String MIBAND_STATUS = "MiBand";
     private static final String BLUEJAY_STATUS = "BlueJay";
@@ -166,7 +165,7 @@ public class MegaStatus extends FloatingLocaleActivityWithScreenshot {
 
         if (sectionList.isEmpty()) {
 
-            addAsection("Classic Status Page", "Legacy System Status");
+            addAsection("Основное", "Состояние системы");
 
             final DexCollectionType dexCollectionType = DexCollectionType.getDexCollectionType();
 
@@ -388,7 +387,7 @@ public class MegaStatus extends FloatingLocaleActivityWithScreenshot {
         };
 
         try {
-            getSupportActionBar().setSubtitle(BuildConfig.VERSION_NAME);
+            getSupportActionBar().setSubtitle(null);
             fixElipsusAndSize(null);
         } catch (Exception e) {
             UserError.Log.e(TAG, "Got exception trying to set subtitle: ", e);
@@ -478,8 +477,8 @@ public class MegaStatus extends FloatingLocaleActivityWithScreenshot {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_screenshot) {
-            val lang = "en"; // force in this language
-            val intent = JoH.getStartActivityIntent(MegaStatus.class);
+            final var lang = "en"; // force in this language
+            final var intent = JoH.getStartActivityIntent(MegaStatus.class);
             intent.putExtra(FORCE_ACTIVITY_LANGUAGE,lang);
             intent.putExtra(SCREENSHOT_AND_EXIT, true);
             FloatingLocaleActivityWithScreenshot.localeString = lang;

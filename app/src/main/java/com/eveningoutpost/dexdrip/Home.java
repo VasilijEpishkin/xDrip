@@ -166,7 +166,6 @@ import com.github.amlcurran.showcaseview.targets.ViewTarget;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.internal.bind.DateTypeAdapter;
 import static com.eveningoutpost.dexdrip.utils.DexCollectionType.DexcomG5;
 
 import java.io.ByteArrayOutputStream;
@@ -197,7 +196,6 @@ import lecho.lib.hellocharts.model.Viewport;
 import lecho.lib.hellocharts.view.LineChartView;
 import lecho.lib.hellocharts.view.PreviewLineChartView;
 import lombok.Getter;
-import lombok.val;
 
 public class Home extends ActivityWithMenu implements ActivityCompat.OnRequestPermissionsResultCallback {
     private final static String TAG = "jamorham " + Home.class.getSimpleName();
@@ -1140,7 +1138,7 @@ public class Home extends ActivityWithMenu implements ActivityCompat.OnRequestPe
     }
 
     public void crowdTranslate(MenuItem x) {
-        val url = "https://crowdin.com/project/xdrip";
+        final var url = "https://crowdin.com/project/xdrip";
         try {
             // startActivity(new Intent(this, LanguageEditor.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
@@ -1691,7 +1689,7 @@ public class Home extends ActivityWithMenu implements ActivityCompat.OnRequestPe
                 }
             Gson gson = new GsonBuilder()
                     .excludeFieldsWithoutExposeAnnotation()
-                    .registerTypeAdapter(Date.class, new DateTypeAdapter())
+                    .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
                     .serializeSpecialFloatingPointValues()
                     .create();
             WatchUpdaterService.sendTreatment(
@@ -2027,18 +2025,18 @@ public class Home extends ActivityWithMenu implements ActivityCompat.OnRequestPe
             params.topMargin = 130;
             chart.setLayoutParams(params);
         }
-        chart.setBackgroundColor(getCol(X.color_home_chart_background));
+        chart.setBackgroundColor(ContextCompat.getColor(this, R.color.md_background));
         chart.setZoomType(ZoomType.HORIZONTAL);
         chart.setMaxZoom(50f);
 
         // inject our gesture handler if it hasn't already been done
         try {
-            val gestureDetector =  ChartTouchHandler.class.getDeclaredField("gestureDetector");
+            final var gestureDetector =  ChartTouchHandler.class.getDeclaredField("gestureDetector");
             gestureDetector.setAccessible(true);
-            val chartTouchHandler = chart.getTouchHandler();
-            val previewChartTouchHandler = previewChart.getTouchHandler();
-            val activeDetector = (GestureDetector) gestureDetector.get(chartTouchHandler);
-            val previewActiveDetector = (GestureDetector) gestureDetector.get(previewChartTouchHandler);
+            final var chartTouchHandler = chart.getTouchHandler();
+            final var previewChartTouchHandler = previewChart.getTouchHandler();
+            final var activeDetector = (GestureDetector) gestureDetector.get(chartTouchHandler);
+            final var previewActiveDetector = (GestureDetector) gestureDetector.get(previewChartTouchHandler);
             if (!(activeDetector instanceof InterceptingGestureHandler)) {
                 gestureDetector.set(chartTouchHandler, new InterceptingGestureHandler(this, activeDetector));
             } else {
@@ -2100,7 +2098,7 @@ public class Home extends ActivityWithMenu implements ActivityCompat.OnRequestPe
         chart.setLineChartData(bgGraphBuilder.lineData());
         chart.setOnValueTouchListener(bgGraphBuilder.getOnValueSelectTooltipListener(mActivity));
 
-        previewChart.setBackgroundColor(getCol(X.color_home_chart_background));
+        previewChart.setBackgroundColor(ContextCompat.getColor(this, R.color.md_background));
         previewChart.setZoomType(ZoomType.HORIZONTAL);
         previewChart.setLineChartData(bgGraphBuilder.previewLineData(chart.getLineChartData()));
         previewChart.setViewportCalculationEnabled(true);
@@ -3668,12 +3666,6 @@ public class Home extends ActivityWithMenu implements ActivityCompat.OnRequestPe
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        /*// jamorham additions
-        if (item.getItemId() == R.id.synctreatments) {
-            startActivity(new Intent(this, GoogleDriveInterface.class));
-            return true;
-
-        }*/
         return super.onOptionsItemSelected(item);
     }
 
@@ -3895,4 +3887,5 @@ public class Home extends ActivityWithMenu implements ActivityCompat.OnRequestPe
         }
 
     }*/
+
 }

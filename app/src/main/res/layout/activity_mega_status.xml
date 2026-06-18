@@ -5,22 +5,37 @@
     android:layout_height="match_parent"
     tools:context="com.eveningoutpost.dexdrip.Home">
 
-    <androidx.viewpager.widget.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/container"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/md_background"
+        android:orientation="vertical">
 
-        <androidx.viewpager.widget.PagerTitleStrip
-            android:id="@+id/pager_title_strip"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:background="#226ab2"
-            android:paddingBottom="4dp"
-            android:paddingTop="4dp"
-            android:textColor="#fff" />
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/md_background" />
 
-    </androidx.viewpager.widget.ViewPager>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/md_background">
+
+            <androidx.viewpager.widget.PagerTitleStrip
+                android:id="@+id/pager_title_strip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="@color/md_surface"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/md_on_surface" />
+
+        </androidx.viewpager.widget.ViewPager>
+
+    </LinearLayout>
 
     <fragment
         android:id="@+id/navigation_drawer"

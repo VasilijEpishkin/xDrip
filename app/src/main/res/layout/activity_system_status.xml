@@ -11,10 +11,11 @@
     android:id="@+id/status_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/md_background"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="2dp"
+    android:paddingTop="8dp"
     tools:context="com.eveningoutpost.dexdrip.MegaStatus">
 
     <ScrollView
@@ -42,7 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/version"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface_variant" />
 
                 <TextView
                     android:id="@+id/version_name"
@@ -51,7 +52,8 @@
                     android:text="--"
                     android:paddingBottom="5dp"
                     android:paddingLeft="5dp"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                    android:textColor="@color/md_on_surface_variant" />
             </LinearLayout>
 
             <LinearLayout
@@ -67,7 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/data_source"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface_variant" />
 
                 <TextView
                     android:id="@+id/collection_method"
@@ -75,7 +77,8 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dp"
                     android:text='@{ms.gs("niceCollector")}'
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    android:textColor="@color/md_primary" />
             </LinearLayout>
 
             <LinearLayout
@@ -89,14 +92,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/database_size"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface_variant" />
 
                 <TextView
                     android:id="@+id/db_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dp"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface" />
             </LinearLayout>
 
             <LinearLayout
@@ -113,14 +116,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/bluetooth_device"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface_variant" />
 
                 <TextView
                     android:id="@+id/remembered_device"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dp"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface" />
             </LinearLayout>
 
             <LinearLayout
@@ -136,7 +139,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/connection_status_long"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface_variant" />
 
                 <TextView
                     android:id="@+id/connection_status"
@@ -144,7 +147,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="5dp"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodySmall" android:textColor="@color/md_on_surface_variant" />
             </LinearLayout>
 
 
@@ -160,14 +163,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sensor_start"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface_variant" />
 
                 <TextView
                     android:id="@+id/sensor_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dp"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface" />
             </LinearLayout>
 
 
@@ -183,33 +186,34 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/transmitter_battery_status"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface_variant" />
 
                 <TextView
                     android:id="@+id/transmitter_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dp"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface" />
             </LinearLayout>
 
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/other_notes_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="10dp"
                 android:text="@string/other_notes"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="14sp" />
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                android:textColor="@color/md_on_surface_variant" />
 
             <TextView
                 android:id="@+id/other_notes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textColor="@color/md_on_surface" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -223,40 +227,43 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|bottom"
-                    android:gravity="center_horizontal|bottom"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/restart_collection_service"
-                        style="?android:attr/buttonStyleSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        app:cornerRadius="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="@string/restart_collector"
                         android:textAllCaps="false"/>
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/forget_device"
                         app:showIfTrue="@{ms.bluetooth()}"
-                        style="?android:attr/buttonStyleSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:backgroundTint="@color/md_error_container"
+                        android:textColor="@color/md_on_error_container"
+                        app:cornerRadius="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:text="@string/forget_device"
                         android:textAllCaps="false"/>
-                </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageButton
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/refresh_current_values"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        app:cornerRadius="20dp"
+                        app:icon="@android:drawable/stat_notify_sync"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@android:drawable/stat_notify_sync" />
+                        android:layout_marginTop="8dp"
+                        android:text="@string/menu_refresh"
+                        android:textAllCaps="false"
+                        android:paddingStart="24dp"
+                        android:paddingEnd="24dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -276,9 +283,12 @@
                     android:gravity="center_horizontal|bottom"
                     android:orientation="horizontal">
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/delete_future_data"
-                        style="?android:attr/buttonStyleSmall"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:backgroundTint="@color/md_error_container"
+                        android:textColor="@color/md_on_error_container"
+                        app:cornerRadius="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/delete_future_data"
@@ -289,12 +299,13 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|bottom"
                     android:layout_marginTop="40dp">
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/reread_transmitter"
                         app:showIfTrue="@{ms.rereadTx()}"
-                        style="?android:attr/buttonStyleSmall"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        app:cornerRadius="20dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="@string/re_read_transmitter"
                         android:textAllCaps="false"/>
                 </LinearLayout>

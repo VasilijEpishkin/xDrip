@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- CGM graph colors — used by canvas drawing, do not remove -->
     <color name="percentile_outer">#005882</color>
     <color name="percentile_inner">#2d95c2</color>
     <color name="percentile_median">#bce6ff</color>
-
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303f9f</color>
-    <color name="colorAccent">#ff4081</color>
     <color name="year">#999999</color>
     <color name="title">#62a262</color>
     <color name="yellow100">#fff9c4</color>
     <color name="darker_white">#d3d3d3</color>
+
+    <!-- Material Design 3 dark color scheme (seed: Teal #00897B) -->
+    <color name="md_primary">#4DD9AC</color>
+    <color name="md_on_primary">#003826</color>
+    <color name="md_primary_container">#005138</color>
+    <color name="md_on_primary_container">#70F5C6</color>
+
+    <color name="md_secondary">#84CEEB</color>
+    <color name="md_on_secondary">#003548</color>
+    <color name="md_secondary_container">#004E6A</color>
+    <color name="md_on_secondary_container">#BDE9FF</color>
+
+    <color name="md_tertiary">#DABDE2</color>
+    <color name="md_on_tertiary">#3C2948</color>
+    <color name="md_tertiary_container">#543F60</color>
+    <color name="md_on_tertiary_container">#F7D9FF</color>
+
+    <color name="md_error">#FFB4AB</color>
+    <color name="md_on_error">#690005</color>
+    <color name="md_error_container">#93000A</color>
+    <color name="md_on_error_container">#FFDAD6</color>
+
+    <color name="md_background">#0F1117</color>
+    <color name="md_on_background">#E2E6EF</color>
+    <color name="md_surface">#1A1E26</color>
+    <color name="md_on_surface">#E2E6EF</color>
+    <color name="md_surface_variant">#3A3F4A</color>
+    <color name="md_on_surface_variant">#9CA8B8</color>
+    <color name="md_outline">#4A5568</color>
+    <color name="md_outline_variant">#2D3748</color>
+    <color name="md_inverse_surface">#E2E6EF</color>
+    <color name="md_inverse_on_surface">#2D3142</color>
+    <color name="md_inverse_primary">#006C52</color>
+    <color name="md_surface_tint">#4DD9AC</color>
+
+    <!-- Legacy aliases — referenced elsewhere in the codebase -->
+    <color name="colorPrimary">@color/md_primary</color>
+    <color name="colorPrimaryDark">@color/md_primary_container</color>
+    <color name="colorAccent">@color/md_secondary</color>
 </resources>

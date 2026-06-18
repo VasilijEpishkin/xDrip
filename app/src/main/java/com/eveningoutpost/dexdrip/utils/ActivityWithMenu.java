@@ -3,7 +3,7 @@ package com.eveningoutpost.dexdrip.utils;
 import android.content.Intent;
 import android.os.Bundle;
 
-
+import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.eveningoutpost.dexdrip.BaseAppCompatActivity;
@@ -39,6 +39,11 @@ public abstract class ActivityWithMenu extends BaseAppCompatActivity implements 
         NavDrawerBuilder navDrawerBuilder = new NavDrawerBuilder(getApplicationContext());
         List<String> menu_option_list = navDrawerBuilder.nav_drawer_options;
         menu_position = menu_option_list.indexOf(menu_name);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
 
         try {
             mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);

@@ -81,7 +81,7 @@ public class SystemStatusFragment extends Fragment {
     private Button forget_device;
     private Button reread_transmitter;
     private Button futureDataDeleteButton;
-    private ImageButton refresh;
+    private View refresh;
     private SharedPreferences prefs;
     private BluetoothManager mBluetoothManager;
     private BluetoothAdapter mBluetoothAdapter;
@@ -189,12 +189,22 @@ public class SystemStatusFragment extends Fragment {
         db_size_view = (TextView) v.findViewById(R.id.db_size);
 
         notes = (TextView) v.findViewById(R.id.other_notes);
+        final View otherNotesLabel = v.findViewById(R.id.other_notes_label);
+        notes.addTextChangedListener(new android.text.TextWatcher() {
+            public void afterTextChanged(android.text.Editable s) {
+                int vis = s.length() > 0 ? android.view.View.VISIBLE : android.view.View.GONE;
+                otherNotesLabel.setVisibility(vis);
+                notes.setVisibility(vis);
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
 
 
         restart_collection_service = (Button) v.findViewById(R.id.restart_collection_service);
         forget_device = (Button) v.findViewById(R.id.forget_device);
         reread_transmitter = (Button) v.findViewById(R.id.reread_transmitter);
-        refresh = (ImageButton) v.findViewById(R.id.refresh_current_values);
+        refresh = v.findViewById(R.id.refresh_current_values);
         futureDataDeleteButton = (Button) v.findViewById(R.id.delete_future_data);
 
         //check for small devices:

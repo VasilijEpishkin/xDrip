@@ -14,7 +14,8 @@
         android:paddingRight="5dp"
         android:text="name"
         android:layout_weight="1"
-        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+        android:textColor="@color/md_on_surface_variant"
         android:gravity="end" />
 
     <TextView
@@ -26,7 +27,8 @@
         android:layout_width="5dp"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:textSize="14sp" />
+        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+        android:textColor="@color/md_on_surface_variant" />
 
     <TextView
         android:id="@+id/value"
@@ -36,7 +38,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="14sp" />
+        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+        android:textColor="@color/md_on_surface" />
 
 
     <Button

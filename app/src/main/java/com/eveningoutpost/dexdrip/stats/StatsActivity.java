@@ -222,14 +222,14 @@ public class StatsActivity extends ActivityWithMenu {
                 break;
         }
 
-        ColorStateList csl = new ColorStateList(new int[][]{new int[0]}, new int[]{0xFF606060});
+        ColorStateList csl = new ColorStateList(new int[][]{new int[0]}, new int[]{ContextCompat.getColor(this, R.color.md_surface)});
         buttonTD.setBackgroundTintList(csl);
         buttonYTD.setBackgroundTintList(csl);
         button7d.setBackgroundTintList(csl);
         button30d.setBackgroundTintList(csl);
         button90d.setBackgroundTintList(csl);
         TextView statsTimePeriodLabelText = findViewById(R.id.stats_time_period_label);
-        csl = new ColorStateList(new int[][]{new int[0]}, new int[]{0xFFAA0000});
+        csl = new ColorStateList(new int[][]{new int[0]}, new int[]{ContextCompat.getColor(this, R.color.md_primary)});
         switch (state) {
             case TODAY:
                 buttonTD.setBackgroundTintList(csl);
@@ -297,7 +297,7 @@ public class StatsActivity extends ActivityWithMenu {
         if (Pref.getBooleanDefaultFalse(SHOW_STATISTICS_PRINT_COLOR)) {
             setTheme(R.style.StatisticsWhiteTheme);
         } else {
-            setTheme(R.style.AppTheme);
+            setTheme(R.style.AppThemeToolBar);
         }
         if (recreate) recreate();
     }

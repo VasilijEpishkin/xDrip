@@ -45,7 +45,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-import lombok.val;
 
 public class StartNewSensor extends ActivityWithMenu {
     // public static String menu_name = "Start Sensor";
@@ -197,9 +196,9 @@ public class StartNewSensor extends ActivityWithMenu {
         if (Ob1G5CollectionService.usingCollector() && Ob1G5StateMachine.usingG6()) {
             if (JoH.pratelimit("dex-stop-start", cap)) {
                 JoH.clearRatelimit("dex-stop-start");
-                val transmitterAgeInDays = transmitterAgeInDays();
-                val modified = FirmwareCapability.isTransmitterModified(getTransmitterID());
-                val endOfLife = transmitterAgeInDays >= ABSOLUTE_MAX_AGE_DAYS || (!modified && transmitterAgeInDays >= MAX_AGE_DAYS);
+                final var transmitterAgeInDays = transmitterAgeInDays();
+                final var modified = FirmwareCapability.isTransmitterModified(getTransmitterID());
+                final var endOfLife = transmitterAgeInDays >= ABSOLUTE_MAX_AGE_DAYS || (!modified && transmitterAgeInDays >= MAX_AGE_DAYS);
                 if (transmitterAgeInDays < MAX_AGE_DAYS - MONTH_WARNING_DAYS
                         || (modified && transmitterAgeInDays < ABSOLUTE_MAX_AGE_DAYS - MONTH_WARNING_DAYS)) {
                     // More than 30 days left of starting sensors - just ask for code

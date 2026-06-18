@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="0dp"
+    android:background="@color/md_background"
     tools:context="com.eveningoutpost.dexdrip.MegaStatus$PlaceholderFragment">
 
     <TextView
@@ -14,7 +15,8 @@
         android:id="@+id/section_label"
         android:layout_width="wrap_content"
         android:text="lorem"
-        android:textColor="#fff9c4"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="@color/md_primary"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true" />
 
